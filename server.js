@@ -5,7 +5,7 @@ const mysql = require('mysql2');
 const cors = require('cors')
 const app = express();
 
-app.use(cors);
+app.use(cors());
 app.use(express.json());
 // connekt mysql
 const db = mysql.createConnection({
@@ -27,7 +27,11 @@ app.get('/students',(req, res)=>{
   })
 })
 
+// add new stu
 
+
+// Start server
+app.listen(3000, () => console.log('Server running on http://localhost:3000'));
 
 
 

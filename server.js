@@ -28,7 +28,14 @@ app.get('/students',(req, res)=>{
 })
 
 // add new stu
-
+app.post('/students',(req, res)=>{
+  const{name, grade, avatar} = req.body;
+  db.Queery('INSERT INTO students(name, grade, avatar) VALUES(?,?,?)',[name, grade, avatar],
+    (err)=>{
+      if(err) throw err
+      res.json({message: 'student added'});
+    } );
+});
 
 // Start server
 app.listen(3000, () => console.log('Server running on http://localhost:3000'));

@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background: #202020;
+  color: white;
+  font-family: "Special Gothic Expanded One", sans-serif;;
+  text-align: center;
+}
+canvas {
+  display: block;
+}
+form {
+  position: absolute;
+  top: 90px;
+  left: 20%;
+  background: rgba(0,0,0,0.6);
+  padding: 10px;
+  border-radius: 8px;
+}

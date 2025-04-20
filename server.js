@@ -7,6 +7,7 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static('public'));
 // connekt mysql
 const db = mysql.createConnection({
   host: process.env.DB_HOSTMe,
@@ -30,7 +31,7 @@ app.get('/students',(req, res)=>{
 // add new stu
 app.post('/students',(req, res)=>{
   const{name, grade, avatar} = req.body;
-  db.Queery('INSERT INTO students(name, grade, avatar) VALUES(?,?,?)',[name, grade, avatar],
+  db.queery('INSERT INTO students(name, grade, avatar) VALUES(?,?,?)',[name, grade, avatar],
     (err)=>{
       if(err) throw err
       res.json({message: 'student added'});

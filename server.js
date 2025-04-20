@@ -19,6 +19,16 @@ db.connect(err =>{
   console.log('mysql connected');
 });
 
+// get all students from db
+app.get('/students',(req, res)=>{
+  db.query('SELECT * FROM students',(err, results)=>{
+    if(err) throw err;
+    res.json(results)
+  })
+})
+
+
+
 
 
 
